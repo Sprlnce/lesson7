@@ -15,11 +15,10 @@ class Advertisement(models.Model): # это класс-модель
     update_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = 'advertisement'
-        verbose_name_plural = 'advertisement'
+        db_table = "advertisements"
        
-    def __str__(self):
-        return f"title: {self.title}, text: {self.text}"
+    def __str__(self) -> str:
+        return f"Advertisements(id = {self.id}, title = {self.title}, price = {self.price})"
     
 
 # from app_advertisment.models import Advertisement
